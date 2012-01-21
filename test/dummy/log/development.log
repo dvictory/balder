@@ -1,0 +1,240 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-01-20 22:13:32 -0600
+
+ActionController::RoutingError (No route matches [GET] "/"):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:13:39 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 42ms
+
+NameError (undefined local variable or method `check_public_access' for #<CollectionsController:0x007fccb80d0098>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (3.0ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:20:14 -0600
+
+LoadError (Expected /Volumes/OSX Lion Data/Users/victory/Rails_Projects/balder/test/dummy/app/controllers/application_controller.rb to define ApplicationController):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.2ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:20:50 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NameError (undefined local variable or method `acts_as_permissible' for User(Table doesn't exist):Class):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateAlbum (20120121042125)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "albums" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" text, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042125')[0m
+Migrating to CreatePhotos (20120121042126)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "photos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" text, "album_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042126')[0m
+Migrating to AddPathToAlbumAndPhoto (20120121042127)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "albums" ADD "path" text
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "photos" ADD "path" text[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042127')
+Migrating to CreateUsers (20120121042128)
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "password_salt" varchar(255) NOT NULL, "persistence_token" varchar(255) NOT NULL, "single_access_token" varchar(255) NOT NULL, "perishable_token" varchar(255) NOT NULL, "login_count" integer DEFAULT 0 NOT NULL, "failed_login_count" integer DEFAULT 0 NOT NULL, "last_request_at" datetime, "current_login_at" datetime, "last_login_at" datetime, "current_login_ip" varchar(255), "last_login_ip" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042128')
+Migrating to CreateTags (20120121042129)
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042129')
+Migrating to CreatePhotoTags (20120121042130)
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "photo_tags" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "tag_id" integer, "photo_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042130')
+Migrating to AddLocationToAlbum (20120121042131)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "albums" ADD "address" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "albums" ADD "longitude" float
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "albums" ADD "latitude" float[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042131')
+Migrating to AddNameToUser (20120121042132)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "name" varchar(255)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042132')
+Migrating to AddNoteToAlbum (20120121042133)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "albums" ADD "note" text[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20120121042133')
+Migrating to AddLocationToPhoto (20120121042134)
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "photos" ADD "longitude" float[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "photos" ADD "latitude" float
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042134')[0m
+Migrating to CreateCollections (20120121042135)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "collections" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255) NOT NULL, "description" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042135')[0m
+Migrating to CreateCollectionAlbums (20120121042136)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "collection_albums" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "collection_id" integer, "album_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042136')[0m
+Migrating to CreatePermissions (20120121042137)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "permissions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "permissible_id" integer, "permissible_type" varchar(255), "action" varchar(255), "granted" boolean, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042137')[0m
+Migrating to CreateRoleMemberships (20120121042138)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "role_memberships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "roleable_id" integer, "roleable_type" varchar(255), "role_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042138')[0m
+Migrating to CreateRoles (20120121042139)
+  [1m[35m (0.2ms)[0m  CREATE TABLE "roles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042139')[0m
+Migrating to AddIndexes (20120121042140)
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("albums")
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_albums_on_id" ON "albums" ("id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("collections")
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_collections_on_id" ON "collections" ("id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("photos")
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_photos_on_id" ON "photos" ("id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tags")
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_tags_on_id" ON "tags" ("id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("collection_albums")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_collection_albums_on_collection_id" ON "collection_albums" ("collection_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("collection_albums")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_collection_albums_on_collection_id')[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_collection_albums_on_album_id" ON "collection_albums" ("album_id")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("photos")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_photos_on_id')
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_photos_on_album_id" ON "photos" ("album_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("photo_tags")
+  [1m[36m (0.1ms)[0m  [1mCREATE INDEX "index_photo_tags_on_tag_id" ON "photo_tags" ("tag_id")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("photo_tags")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_photo_tags_on_tag_id')[0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_photo_tags_on_photo_id" ON "photo_tags" ("photo_id")
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042140')[0m
+Migrating to AddFileToPhoto (20120121042141)
+  [1m[35m (0.2ms)[0m  ALTER TABLE "photos" ADD "file" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120121042141')[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("albums")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_albums_on_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("collection_albums")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_collection_albums_on_album_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_collection_albums_on_collection_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("collections")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_collections_on_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("permissions")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("photo_tags")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_photo_tags_on_photo_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_photo_tags_on_tag_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("photos")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_info('index_photos_on_album_id')
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_photos_on_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("role_memberships")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("roles")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("tags")
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_info('index_tags_on_id')[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:21:48 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 46ms
+
+NameError (undefined local variable or method `acts_as_permissible' for #<Class:0x007f80b47cf8f8>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.0ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:25:52 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 46ms
+
+NameError (undefined local variable or method `acts_as_permissible' for #<Class:0x007f9c664d6db8>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:31:45 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 43ms
+
+NameError (undefined local variable or method `acts_as_permissible' for #<Class:0x007fb7ce6c2d38>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:34:07 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 47ms
+
+NameError (undefined local variable or method `acts_as_permissible' for #<Class:0x007fa9da7ac200>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (22.5ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-20 22:34:38 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 43ms
+
+NameError (undefined local variable or method `acts_as_permissible' for #<Class:0x007fe9f61bae08>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.5ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-21 14:25:58 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 65ms
+
+NameError (uninitialized constant User::NormBen):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-21 14:26:29 -0600
+  Processing by CollectionsController#index as HTML
+Completed 500 Internal Server Error in 20ms
+
+NameError (uninitialized constant User::NoamBenAri):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/balder" for 127.0.0.1 at 2012-01-21 14:27:53 -0600
+  Processing by CollectionsController#index as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+Completed 500 Internal Server Error in 87ms
+
+NameError (undefined local variable or method `new_account_path' for #<CollectionsController:0x007fbaac7d8840>):
+  
+
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.5ms)
+Rendered /Users/victory/.rvm/gems/ruby-1.9.2-p290@global/gems/actionpack-3.1.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.1ms)
