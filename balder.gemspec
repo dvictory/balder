@@ -5,7 +5,7 @@ require "balder/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "balder engine"
+  s.name        = "balder"
   s.version     = Balder::VERSION
   s.authors     = ["TODO: Your name"]
   s.email       = ["TODO: Your email"]
@@ -17,7 +17,13 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.1.3"
+  s.add_dependency "carrierwave"
+  s.add_dependency "authlogic"
+  s.add_dependency "rmagick"
+  s.add_dependency "mini_exiftool"
+
   # s.add_dependency "jquery-rails"
 
   s.add_development_dependency "pg"
+  s.require_path = 'lib'
 end

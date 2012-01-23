@@ -11,9 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120121042141) do
+ActiveRecord::Schema.define(:version => 20120123072346) do
 
-  create_table "albums", :force => true do |t|
+  create_table "balder_albums", :force => true do |t|
     t.string   "title",       :null => false
     t.text     "description"
     t.datetime "created_at"
@@ -25,28 +25,28 @@ ActiveRecord::Schema.define(:version => 20120121042141) do
     t.text     "note"
   end
 
-  add_index "albums", ["id"], :name => "index_albums_on_id", :unique => true
+  add_index "balder_albums", ["id"], :name => "index_balder_albums_on_id", :unique => true
 
-  create_table "collection_albums", :force => true do |t|
+  create_table "balder_collection_albums", :force => true do |t|
     t.integer  "collection_id"
     t.integer  "album_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "collection_albums", ["album_id"], :name => "index_collection_albums_on_album_id"
-  add_index "collection_albums", ["collection_id"], :name => "index_collection_albums_on_collection_id"
+  add_index "balder_collection_albums", ["album_id"], :name => "index_balder_collection_albums_on_album_id"
+  add_index "balder_collection_albums", ["collection_id"], :name => "index_balder_collection_albums_on_collection_id"
 
-  create_table "collections", :force => true do |t|
+  create_table "balder_collections", :force => true do |t|
     t.string   "title",       :null => false
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "collections", ["id"], :name => "index_collections_on_id", :unique => true
+  add_index "balder_collections", ["id"], :name => "index_balder_collections_on_id", :unique => true
 
-  create_table "permissions", :force => true do |t|
+  create_table "balder_permissions", :force => true do |t|
     t.integer  "permissible_id"
     t.string   "permissible_type"
     t.string   "action"
@@ -55,17 +55,17 @@ ActiveRecord::Schema.define(:version => 20120121042141) do
     t.datetime "updated_at"
   end
 
-  create_table "photo_tags", :force => true do |t|
+  create_table "balder_photo_tags", :force => true do |t|
     t.integer  "tag_id"
     t.integer  "photo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "photo_tags", ["photo_id"], :name => "index_photo_tags_on_photo_id"
-  add_index "photo_tags", ["tag_id"], :name => "index_photo_tags_on_tag_id"
+  add_index "balder_photo_tags", ["photo_id"], :name => "index_balder_photo_tags_on_photo_id"
+  add_index "balder_photo_tags", ["tag_id"], :name => "index_balder_photo_tags_on_tag_id"
 
-  create_table "photos", :force => true do |t|
+  create_table "balder_photos", :force => true do |t|
     t.string   "title",       :null => false
     t.text     "description"
     t.integer  "album_id"
@@ -77,10 +77,10 @@ ActiveRecord::Schema.define(:version => 20120121042141) do
     t.string   "file"
   end
 
-  add_index "photos", ["album_id"], :name => "index_photos_on_album_id"
-  add_index "photos", ["id"], :name => "index_photos_on_id", :unique => true
+  add_index "balder_photos", ["album_id"], :name => "index_balder_photos_on_album_id"
+  add_index "balder_photos", ["id"], :name => "index_balder_photos_on_id", :unique => true
 
-  create_table "role_memberships", :force => true do |t|
+  create_table "balder_role_memberships", :force => true do |t|
     t.integer  "roleable_id"
     t.string   "roleable_type"
     t.integer  "role_id"
@@ -88,21 +88,21 @@ ActiveRecord::Schema.define(:version => 20120121042141) do
     t.datetime "updated_at"
   end
 
-  create_table "roles", :force => true do |t|
+  create_table "balder_roles", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", :force => true do |t|
+  create_table "balder_tags", :force => true do |t|
     t.string   "title",      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "tags", ["id"], :name => "index_tags_on_id", :unique => true
+  add_index "balder_tags", ["id"], :name => "index_balder_tags_on_id", :unique => true
 
-  create_table "users", :force => true do |t|
+  create_table "balder_users", :force => true do |t|
     t.string   "email",                              :null => false
     t.string   "crypted_password",                   :null => false
     t.string   "password_salt",                      :null => false

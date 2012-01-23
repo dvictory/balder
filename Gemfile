@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+#gem 'rails', '3.1.3'
 
 gem 'authlogic'
 
 gem 'mime-types', :require => 'mime/types'
 gem 'carrierwave'
+gem 'jquery-rails'
 
 # -- Heroku
 #gem 'heroku'
@@ -37,4 +38,6 @@ gem "rmagick", :require => 'RMagick'
 # -- EXIF
 # Mini exif tool. Can be disabled. Remove exif_read and exif_write filters in photo model
 #TODO uncomment below
-#gem "mini_exiftool"
+gem "mini_exiftool"
+
+gemspec

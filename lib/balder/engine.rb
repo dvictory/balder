@@ -1,6 +1,15 @@
+require 'rubygems'
+require 'rails'
+require 'jquery-rails'
+require 'carrierwave'
+require 'authlogic'
+require 'RMagick'
+require 'mini_exiftool'
+
 module Balder
   class Engine < Rails::Engine
     isolate_namespace Balder
-    config.autoload_paths += %W(#{Balder::Engine.config.root}/lib)
+    #engine_name 'balder'
+    #config.autoload_paths += %W(#{config.root}/lib)
   end
 end

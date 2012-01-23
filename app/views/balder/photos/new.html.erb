@@ -1,0 +1,10 @@
+<%= form_for @photo, :html => {:multipart => true} do |f| %>
+  <%= f.error_messages %>
+  <%= f.hidden_field :album_id %>
+
+  <p>
+    <%= f.file_field :file %>
+  </p>
+
+  <p><%= f.submit "Add Photo" %></p>
+<% end %>
