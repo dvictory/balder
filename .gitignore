@@ -14,6 +14,7 @@ config/deploy
 Capfile
 public/thumbs
 public/uploads
+public
 vendor/cache
 test/dummy/public
 test/dummy/tmp
