@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency "carrierwave"
   s.add_dependency "authlogic"
   s.add_dependency "rmagick"
-  s.add_dependency "mini_exiftool"
+  #s.add_dependency "mini_exiftool"
 
   # s.add_dependency "jquery-rails"
 
