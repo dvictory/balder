@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Balder::VERSION
   s.authors     = ["Derek Victory"]
   s.email       = [""]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Balder Engine."
-  s.description = "TODO: Description of Engine."
+  s.homepage    = ""
+  s.summary     = "Summary of Balder Engine."
+  s.description = "Balder Engine"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["LICENSE", "Rakefile", "README"]
   s.test_files = Dir["test/**/*"]
