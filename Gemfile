@@ -38,6 +38,6 @@ gem "rmagick", :require => 'RMagick'
 # -- EXIF
 # Mini exif tool. Can be disabled. Remove exif_read and exif_write filters in photo model
 #TODO uncomment below
-gem "mini_exiftool"
+#gem "mini_exiftool"
 
 gemspec

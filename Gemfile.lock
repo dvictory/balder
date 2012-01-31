@@ -131,7 +131,6 @@ DEPENDENCIES
   fog
   jquery-rails
   mime-types
-  mini_exiftool
   pg
   rmagick
   sqlite3-ruby
