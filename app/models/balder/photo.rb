@@ -12,7 +12,7 @@ module Balder
   validates :title, :presence => true
   
   before_validation :set_title
-  before_create :exif_read
+  #before_create :exif_read
   #before_update :exif_write
 
   attr_accessor :tag_list

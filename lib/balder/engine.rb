@@ -4,7 +4,7 @@ require 'jquery-rails'
 require 'carrierwave'
 require 'authlogic'
 require 'RMagick'
-require 'mini_exiftool'
+#require 'mini_exiftool'
 
 module Balder
   class Engine < Rails::Engine
