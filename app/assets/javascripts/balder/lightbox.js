@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
 	$('#multipleimages a').lightBox({fixedNavigation:true,
         imageLoading:			'/assets/lightbox-ico-loading.gif',		// (string) Path and the name of the loading icon
 			imageBtnPrev:			'/assets/lightbox-btn-prev.gif',			// (string) Path and the name of the prev button image
