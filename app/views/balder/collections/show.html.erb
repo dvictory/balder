@@ -2,7 +2,7 @@
 <p><%= h @collection.description %></p>
 
 <% for album in @albums %>
-<div class="row">
+<div class="row clearfix">
   <div class="title">
 	<%= render :partial => "balder/photos/thumb", :locals => {:photo => album.photos.first } unless album.photos.empty? %>
 	<p><%= link_to album.title, collection_album_path(@collection, album) %></p>
