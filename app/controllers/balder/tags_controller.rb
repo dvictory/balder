@@ -1,5 +1,5 @@
 module Balder
-class TagsController < ApplicationController
+class TagsController < Balder::ApplicationController
   before_filter :check_public_access
 
   def index

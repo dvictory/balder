@@ -1,5 +1,5 @@
 module Balder
-class CollectionsController < ApplicationController
+class CollectionsController < Balder::ApplicationController
   before_filter :check_public_access
   before_filter :require_role_admin, :only => [:new, :create, :edit, :update, :destroy]
 

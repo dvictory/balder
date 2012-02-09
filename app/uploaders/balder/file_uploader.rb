@@ -12,7 +12,11 @@ module Balder
       storage :fog
 
       def cache_dir
-        "#{Rails.root.to_s}/tmp/uploads" if ENV['HEROKU'] == 'true'
+        if ENV['HEROKU'] == 'true'
+          "#{Rails.root.to_s}/tmp/uploads"
+        else
+          "balder/uploads/tmp"
+        end
       end
     else
       storage :file
@@ -22,7 +26,7 @@ module Balder
     # This is a sensible default for uploaders that are meant to be mounted:
     def store_dir
       #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-      "uploads/#{model.album.path}/#{mounted_as}/#{model.id}"
+      "balder/#{model.album.path}/#{mounted_as}/#{model.id}"
       #ENV['STORAGE_PATH'] + "/files/#{model.album.path}"
       #"#{ENV['STORAGE_PATH']}/files/#{model.album.path}" unless ENV['STORAGE_PATH'].nil?
       #"/uploads/files/#{model.album.path}" if ENV['STORAGE_PATH'].nil?
@@ -63,7 +67,7 @@ module Balder
        end
      end
      version :single do
-       process :resize_to_limit => [950, 950]
+       process :resize_to_limit => [900, 900]
        def store_dir2
          ENV['STORAGE_PATH'] + "/thumbs/#{model.album.path}" unless ENV['STORAGE_PATH'].nil?
          "/uploads/thumbs/#{model.album.path}" if ENV['STORAGE_PATH'].nil?

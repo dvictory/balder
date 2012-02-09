@@ -1,5 +1,5 @@
 module Balder
-  class UserSessionsController < ApplicationController
+  class UserSessionsController < Balder::ApplicationController
   before_filter :require_no_user, :only => [:new, :create]
   before_filter :require_user, :only => :destroy
   

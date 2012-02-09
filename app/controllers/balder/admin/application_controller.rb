@@ -1,7 +1,7 @@
 module Balder
-  class Admin::ApplicationController < ApplicationController
+  class Admin::ApplicationController < Balder::ApplicationController
   
-	before_filter :require_role_admin
+	  before_filter :require_role_admin
 
   end
-  end
+end
