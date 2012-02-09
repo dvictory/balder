@@ -8,7 +8,6 @@
 //= require jquery_ujs
 //
 //= require_directory ./tag
-//= require_directory ./plupload
 //= require balder/balder
 //= require balder/jquery.livequery
 //= require balder/lightbox/jquery.lightbox-0.5.js
