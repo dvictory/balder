@@ -17,3 +17,4 @@ public/uploads
 public
 vendor/cache
 test/dummy/tmp
+test/dummy/public/uploads
