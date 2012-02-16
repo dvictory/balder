@@ -10,7 +10,7 @@ This is a work in progess, but the basics should work.  Customization are limite
 == Installation
 
 1. In Gem file add:
-gem 'balder',:git=> 'git@github.com:dvictory/balder.git',:branch=>'engine'
+gem 'balder',:git=> 'git@github.com:dvictory/balder.git'
 
 2.'bundle install' to install required gems.
 3 rake balder:install:migrations

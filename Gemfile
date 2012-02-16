@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+#gem 'rails', '3.1.3'
 
 gem 'authlogic'
 
 gem 'mime-types', :require => 'mime/types'
 gem 'carrierwave'
+gem 'jquery-rails'
 
 # -- Heroku
 #gem 'heroku'
@@ -17,7 +18,7 @@ gem 'sqlite3-ruby'
 # MySQL:
 #gem 'mysql2'
 # PostgreSQL:
-#gem 'pg'
+gem 'pg'
 
 # -- Cloud storage
 # AWS S3 support. Can be disabled if using local file system instead of cloud storage.
@@ -25,10 +26,10 @@ gem 'fog'
 
 # -- Photo resizing
 # MiniMagick
-gem "mini_magick"
+#gem "mini_magick"
 
 # ImageMagick:
-#gem "rmagick", :require => 'RMagick'
+gem "rmagick", :require => 'RMagick'
 
 # FreeImage:
 #gem "RubyInline"
@@ -36,4 +37,7 @@ gem "mini_magick"
 
 # -- EXIF
 # Mini exif tool. Can be disabled. Remove exif_read and exif_write filters in photo model
-gem "mini_exiftool"
+#TODO uncomment below
+#gem "mini_exiftool"
+
+gemspec

@@ -23,10 +23,11 @@ class Prince
   #
   def initialize()
     # Finds where the application lives, so we can call it.
-    @exe_path = `which prince`.chomp
+    #@exe_path = `which prince`.chomp
+    @exe_path = "/usr/local/bin/prince"
   	@style_sheets = ''
   	@log_file = "#{Rails.root.to_s}/log/prince.log"
-  	@logger = RAILS_DEFAULT_LOGGER
+  	@logger = Rails.logger
   end
   
   # Sets stylesheets...
